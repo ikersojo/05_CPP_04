@@ -9,6 +9,7 @@ Cat::Cat(void) : Animal()
 		std::cout << "\033[0;33m" << "Default Cat constructor called"
 					<< "\033[0;39m" << std::endl;
 	this->setType("Cat");
+	_catBrain = new Brain();
 }
 
 Cat::Cat(const Cat& obj) : Animal(obj)
@@ -27,6 +28,7 @@ Cat::~Cat(void)
 	if (DEBUG == 1)
 		std::cout << "\033[0;33m" << "Cat Destructor called (type = "
 					<< this->_type << ")" << "\033[0;39m" << std::endl;
+	delete _catBrain;
 }
 
 // Operator overload:

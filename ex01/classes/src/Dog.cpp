@@ -9,6 +9,7 @@ Dog::Dog(void) : Animal()
 		std::cout << "\033[0;33m" << "Default Dog constructor called"
 					<< "\033[0;39m" << std::endl;
 		this->setType("Dog");
+	_dogBrain = new Brain();
 }
 
 Dog::Dog(const Dog& obj) : Animal(obj)
@@ -27,6 +28,7 @@ Dog::~Dog(void)
 	if (DEBUG == 1)
 		std::cout << "\033[0;33m" << "Dog Destructor called (type = "
 					<< this->_type << ")" << "\033[0;39m" << std::endl;
+	delete _dogBrain;
 }
 
 // Operator overload:
@@ -34,8 +36,14 @@ Dog::~Dog(void)
 
 Dog&	Dog::operator=(const Dog& rhs)
 {
-	if (this != &rhs) 
+	if (this != &rhs)
+	{
 		this->_type = rhs.getType();
+		// this->_dogBrain = new Brain();
+		// int i = 0;
+		// while (i < MAXIDEAS)
+		// 	this->_dogBrain->getIdea(i) = rhs->_dogBrain.getIdea(i);
+	}
 	return (*this);
 }
 

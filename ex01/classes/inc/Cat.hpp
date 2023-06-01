@@ -4,6 +4,7 @@
 		#define DEBUG 0
 	#endif
 	#include "../inc/Animal.hpp"
+	#include "../inc/Brain.hpp"
 
 	class Cat : public Animal
 	{
@@ -20,6 +21,9 @@
 
 			// Instance Public Member Functions:
 			void		makeSound(void) const;
+
+		private:
+			Brain*	_catBrain;
 	};
 
 	// Stream operator overload to print Cat Class instances:
