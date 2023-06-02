@@ -11,6 +11,7 @@ Brain::Brain(void)
 	int i = -1;
 	while (++i < MAXIDEAS)
 		this->_ideas[i] = "-";
+	this->_maxIndex = 0;
 }
 
 Brain::Brain(const Brain& obj)
@@ -50,15 +51,21 @@ std::string		Brain::getIdea(int i) const
 	return (this->_ideas[i]);
 }
 
-// Stream operator overload to print Brain Class instances:
-/* ************************************************************************** */
-
-std::ostream& operator<<(std::ostream& os, const Brain& instance)
+void	Brain::addIdea(std::string idea)
 {
-	int i = -1;
-	while (++i < MAXIDEAS && instance.getIdea(i) != "-")
+	if (this->_maxIndex < MAXIDEAS)
 	{
-		os << i <<".- " << instance.getIdea(i) << std::endl;
+		this->_ideas[this->_maxIndex] = idea;
+		this->_maxIndex ++;
 	}
-	return (os);
+	else
+		std::cout << "There is no room in the Brain fot more ideas" <<std::endl;
+}
+
+void	Brain::printAllIdeas(void)
+{
+	std::cout << "All ideas:" << std::endl;
+	int i = -1;
+	while (++i < _maxIndex)
+		std::cout << "    " << i << "- " << this->getIdea(i) << std::endl;
 }

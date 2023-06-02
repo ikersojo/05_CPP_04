@@ -22,13 +22,13 @@
 
 			// Instance Public Member Functions:
 			std::string		getIdea(int i) const;
+			void			addIdea(std::string idea);
+			void			printAllIdeas(void);
 
 		private:
 			// Instance attributes:
 			std::string		_ideas[MAXIDEAS];
+			int				_maxIndex;
 	};
-
-	// Stream operator overload to print Brain Class instances:
-	std::ostream& operator<<(std::ostream& os, const Brain& instance);
 
 #endif // BRAIN_HPP

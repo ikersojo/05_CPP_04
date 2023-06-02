@@ -21,6 +21,8 @@
 
 			// Instance Public Member Functions:
 			void		makeSound(void) const;
+			void		addIdea(std::string idea);
+			void		printAllIdeas(void);
 
 		private:
 			Brain*	_dogBrain;

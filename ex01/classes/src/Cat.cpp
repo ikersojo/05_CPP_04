@@ -36,8 +36,14 @@ Cat::~Cat(void)
 
 Cat&	Cat::operator=(const Cat& rhs)
 {
-	if (this != &rhs) 
+	if (this != &rhs)
+	{
 		this->_type = rhs.getType();
+		this->_catBrain = new Brain();
+		int i = -1;
+		while (++i < MAXIDEAS)
+			this->_catBrain->addIdea(rhs._catBrain->getIdea(i));
+	}
 	return (*this);
 }
 
@@ -47,6 +53,16 @@ Cat&	Cat::operator=(const Cat& rhs)
 void	Cat::makeSound(void) const
 {
 	std::cout << "Cat sound! 🐱 🐱 🐱 🐱 🐱" << std::endl;
+}
+
+void	Cat::printAllIdeas(void)
+{
+	_catBrain->printAllIdeas();
+}
+
+void	Cat::addIdea(std::string idea)
+{
+	this->_catBrain->addIdea(idea);
 }
 
 // Stream operator overload to print Cat Class instances:

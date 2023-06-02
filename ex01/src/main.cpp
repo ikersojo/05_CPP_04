@@ -49,32 +49,15 @@ int main(void)
 	delete j;
 
 	printBlueLine("---------------------------------------------");
-	const WrongAnimal*	wrongMeta = new WrongAnimal();
-	const WrongAnimal*	wrongI = new WrongCat();
-	
-	printBlueLine("---------------------------------------------");
-	printBlueLine("wrongMeta = new WrongAnimal(); wrongMeta->getType()");
-	std::cout << wrongMeta->getType() << " " << std::endl;
-
-	printBlueLine("wrongI = new WrongCat(); wrongI->getType()");
-	std::cout << wrongI->getType() << " " << std::endl;
-
-	printBlueLine("making WrongCat sound...");
-	wrongI->makeSound();
-
-	printBlueLine("making WrongAnimal sound...");
-	wrongMeta->makeSound();
-
-	printBlueLine("---------------------------------------------");
-	delete wrongMeta;
-	delete wrongI;
-
-	printBlueLine("---------------------------------------------");
 	printBlueLine("---------------------------------------------");
 	printBlueLine("---------------------------------------------");
 	Dog	dog1;
 
 	std::cout << dog1 << std::endl;
+	dog1.makeSound();
+	dog1.addIdea("I am a good dog!");
+	dog1.addIdea("Yes.....");
+	dog1.printAllIdeas();
 	dog1.makeSound();
 
 	return (0);
