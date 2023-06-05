@@ -3,11 +3,12 @@
 // Constructors
 /* ************************************************************************** */
 
-Cure::Cure(void) : AMateria("Cure")
+Cure::Cure(void) : AMateria("cure")
 {
 	if (DEBUG == 1)
 		std::cout << "\033[0;33m" << "Default Cure constructor called"
 					<< "\033[0;39m" << std::endl;
+		this->_type = "cure";
 }
 
 Cure::Cure(const Cure& obj)

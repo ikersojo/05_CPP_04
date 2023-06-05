@@ -13,7 +13,7 @@
 	{
 		public:
 			// Destructor
-			virtual ~ICharacter(void);
+			virtual ~ICharacter(void) {}
 
 			// Instance Public Member Functions:
 			virtual const std::string&	getName() const = 0;

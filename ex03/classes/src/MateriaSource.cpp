@@ -72,7 +72,8 @@ void		MateriaSource::learnMateria(AMateria* m)
 		}
 	}
 	if (i == 4)
-		std::cout << "No empty slots! Materia cannot be added!" << std::endl;
+		std::cout << "\033[0;31m" << "No empty slots! Materia cannot be added!"
+					<< "\033[0;39m" << std::endl;
 }
 
 AMateria*	MateriaSource::createMateria(const std::string& type)
@@ -82,11 +83,12 @@ AMateria*	MateriaSource::createMateria(const std::string& type)
 	{
 		if (this->_knownMateria[i] != NULL && this->_knownMateria[i]->getType() == type)
 		{
-			std::cout << this->_knownMateria[i]->getType() << " materia created!" << std::endl;
+			std::cout << "\033[0;92m" << this->_knownMateria[i]->getType() << " materia created!"
+						<< "\033[0;39m" << std::endl;
 			return (this->_knownMateria[i]->clone());
 		}
 	}
-	std::cout << "Unknown Materia!" << std::endl;
+	std::cout << "\033[0;31m" << "Unknown Materia!" << "\033[0;39m" << std::endl;
 	return (NULL);
 }
 

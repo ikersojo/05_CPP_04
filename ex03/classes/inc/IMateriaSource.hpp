@@ -11,7 +11,7 @@
 	{
 		public:
 			// Destructor
-			virtual ~IMateriaSource();
+			virtual ~IMateriaSource() {}
 
 			// Instance Public Member Functions:
 			virtual void		learnMateria(AMateria*) = 0;

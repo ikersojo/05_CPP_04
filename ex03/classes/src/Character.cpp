@@ -146,10 +146,10 @@ void	Character::unequip(int idx)
 			}
 		}
 		if (i == 20)
-			std::cout << "No room on the floor. Cannot be unequiped!" << std::endl;
+			std::cout << "\033[0;31m" << "No room on the floor. Cannot be unequiped!" << "\033[0;39m" << std::endl;
 	}
 	else
-		std::cout << "Slot not equiped!" << std::endl;
+		std::cout << "\033[0;31m" << "Slot not equiped!" << "\033[0;39m" << std::endl;
 }
 
 void	Character::use(int idx, ICharacter& target)
@@ -159,7 +159,7 @@ void	Character::use(int idx, ICharacter& target)
 		this->_inventorySlot[idx]->use(target);
 	}
 	else
-		std::cout << "Slot not equiped!" << std::endl;
+		std::cout << "\033[0;31m" << "Slot not equiped!" << "\033[0;39m"<< std::endl;
 }
 
 void	Character::printInventory(void)

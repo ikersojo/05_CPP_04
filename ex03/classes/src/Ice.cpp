@@ -8,6 +8,7 @@ Ice::Ice(void) : AMateria("ice")
 	if (DEBUG == 1)
 		std::cout << "\033[0;33m" << "Default Ice constructor called"
 					<< "\033[0;39m" << std::endl;
+	this->_type = "ice";
 }
 
 Ice::Ice(const Ice& obj)
