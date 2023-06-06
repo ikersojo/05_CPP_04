@@ -122,11 +122,30 @@ void	Character::equip(AMateria* m)
 		if (this->_inventorySlot[i] == NULL)
 		{
 			this->_inventorySlot[i] = m;
+			std::cout << "\033[0;92m" << this->_inventorySlot[i]->getType() << " materia equiped in slot "
+						<< i << "!" << "\033[0;39m" << std::endl;
 			break;
 		}
 	}
 	if (i == 4)
-		std::cout << "No empty slots!" << std::endl;
+	{
+		std::cout << "\033[0;31m" << "No empty slots!" << "\033[0;39m" << std::endl;
+		i = -1;
+		while (++i < 20)
+		{
+			if (this->_floor[i] == NULL)
+			{
+				this->_floor[i] = m;
+				std::cout << "\033[0;31m" << "Materia left in the floor." << "\033[0;39m" << std::endl;
+				break ;
+			}
+		}
+		if (i == 20)
+		{
+			std::cout << "\033[0;31m" << "No room in the floor either. Materia destroyed" << "\033[0;39m" << std::endl;
+			delete m;
+		}
+	}
 }
 
 void	Character::unequip(int idx)
@@ -142,11 +161,17 @@ void	Character::unequip(int idx)
 			{
 				this->_floor[i] = this->_inventorySlot[idx];
 				this->_inventorySlot[idx] = NULL;
+				std::cout << "\033[0;92m" << this->_inventorySlot[i]->getType() << " materia unequiped from slot "
+						<< i << "." << "\033[0;39m" << std::endl;
 				break ;
 			}
 		}
 		if (i == 20)
-			std::cout << "\033[0;31m" << "No room on the floor. Cannot be unequiped!" << "\033[0;39m" << std::endl;
+		{
+			std::cout << "\033[0;31m" << "No room on the floor. Cannot be unequiped! Materia destroyed!" << "\033[0;39m" << std::endl;
+			delete this->_inventorySlot[idx];
+			this->_inventorySlot[idx] = NULL;
+		}
 	}
 	else
 		std::cout << "\033[0;31m" << "Slot not equiped!" << "\033[0;39m" << std::endl;

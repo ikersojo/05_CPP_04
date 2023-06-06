@@ -11,7 +11,7 @@ Ice::Ice(void) : AMateria("ice")
 	this->_type = "ice";
 }
 
-Ice::Ice(const Ice& obj)
+Ice::Ice(const Ice& obj) : AMateria(obj)
 {
 	if (DEBUG == 1)
 		std::cout << "\033[0;33m" << "Ice Copy constructor called"

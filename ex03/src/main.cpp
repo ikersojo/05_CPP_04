@@ -9,6 +9,8 @@ static void	printBlueLine(std::string str)
 int main(void)
 {
 	printBlueLine("---------------------------------------------");
+	printBlueLine("--------------- MANDATORY PART --------------");
+	printBlueLine("---------------------------------------------");
 	IMateriaSource* src = new MateriaSource();
 
 	printBlueLine("---------------------------------------------");
@@ -29,6 +31,23 @@ int main(void)
 	printBlueLine("---------------------------------------------");
 	me->use(0, *bob);
 	me->use(1, *bob);
+
+	// printBlueLine("-------------------- extra 1 -------------------------");
+	// int j = -1;
+	// while (++j < 30)
+	// {
+	// 	tmp = src->createMateria("ice");
+	// 	me->equip(tmp);
+	// }
+	// printBlueLine("-------------------- extra 2 -------------------------");
+	// me->unequip(1);
+	// tmp = src->createMateria("cure");
+	// me->equip(tmp);
+
+	// printBlueLine("-------------------- extra 3 -------------------------");
+	// ICharacter* me2;
+	// me2 = me;
+	// me2->use(0,*me);
 
 	printBlueLine("---------------------------------------------");
 	delete bob;

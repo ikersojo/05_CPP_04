@@ -8,10 +8,10 @@ Cure::Cure(void) : AMateria("cure")
 	if (DEBUG == 1)
 		std::cout << "\033[0;33m" << "Default Cure constructor called"
 					<< "\033[0;39m" << std::endl;
-		this->_type = "cure";
+	this->_type = "cure";
 }
 
-Cure::Cure(const Cure& obj)
+Cure::Cure(const Cure& obj) : AMateria(obj)
 {
 	if (DEBUG == 1)
 		std::cout << "\033[0;33m" << "Cure Copy constructor called"
