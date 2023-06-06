@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/06 21:26:32 by isojo-go          #+#    #+#             */
+/*   Updated: 2023/06/06 21:26:42 by isojo-go         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/WrongCat.hpp"
 
 // Constructors
@@ -25,7 +37,7 @@ WrongCat::WrongCat(const WrongCat& obj) : WrongAnimal(obj)
 WrongCat::~WrongCat(void)
 {
 	if (DEBUG == 1)
-		std::cout << "\033[0;33m" << "WrongCat Destructor called (type = "
+		std::cout << "\033[0;33m" << "WrongCat Destructor ca∫lled (type = "
 					<< this->_type << ")" << "\033[0;39m" << std::endl;
 }
 
